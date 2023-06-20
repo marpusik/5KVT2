@@ -1,0 +1,69 @@
+// Container
+.container {
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $containerSidePadding + px;
+  @media (max-width: $breakpoint1250) {
+    max-width: 1250px;
+    padding: 0 30px;
+  }
+  @media (max-width: $breakpoint992) {
+    max-width: 992px;
+    padding: 0 15px;
+  }
+  @media (max-width: $breakpoint768) {
+    max-width: 768px;
+    padding: 0 10px;
+  }
+  @media (max-width: $breakpoint480) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/lato-regular.woff2") format("woff2");
+  font-weight: 500;
+  src: url("/fonts/lato_medium.woff2") format("woff2");
+  font-weight: 600;
+  src: url("/fonts/lato_semibold.woff2") format("woff2");
+  font-weight: 900;
+  src: url("/fonts/lato_black.woff2") format("woff2");
+}
+// Body Locked
+body {
+  min-width: 480px;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  &.locked {
+    overflow: hidden;
+  }
+}
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.btn {
+  background: #1074EB;
+  border-radius: 3px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  padding: 5px 10px;
+}
+//@extend .flex__center;
+.fc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
