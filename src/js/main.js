@@ -22,6 +22,7 @@ function burgerMenu() {
         }
     })
 }
+
 burgerMenu()
 
 const swiper = new Swiper('.swiper__first', {
@@ -118,13 +119,38 @@ function accordion() {
         })
     })
 }
+
 accordion()
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const element = document.querySelector('.swiper-wrapper');
-//     element.addEventListener('click', function() {
-//         window.location.href = 'http://localhost:3000/cards.html';
-//     });
-// });
+let modal = document.querySelector('.pop-up__layout');
+let modalClose = document.querySelector('.modal-close');
+let modalOpen = document.querySelector('.modal');
+modalOpen.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.toggle('disable');
+});
+modalClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.toggle('disable');
+});
+
+
+function popAccordion() {
+    const popItem = document.querySelectorAll('.pop-up__accordion');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const popParent = item.parentNode
+            if (popParent.classList.contains('pop-up__active')) {
+                popParent.classList.remove('pop-up__active')
+            } else {
+                document.querySelectorAll('.pop-up__list')
+                    .forEach(child => child.classList.remove('pop-up__active'))
+                popParent.classList.add('pop-up__active')
+            }
+        })
+    })
+}
+popAccordion()
+
 
 
