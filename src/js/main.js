@@ -137,22 +137,23 @@ modalClose.addEventListener('click', (e) => {
 
 
 function popAccordion() {
-    const popItem = document.querySelectorAll('.pop-up__accordion');
+    const items = document.querySelectorAll('.pop-up__accordion');
     items.forEach(item => {
         item.addEventListener('click', () => {
-            const popParent = item.parentNode
+            const popParent = item.parentNode;
             if (popParent.classList.contains('pop-up__active')) {
-                popParent.classList.remove('pop-up__active')
+                popParent.classList.remove('pop-up__active');
             } else {
                 document.querySelectorAll('.pop-up__list')
-                    .forEach(child => child.classList.remove('pop-up__active'))
-                popParent.classList.add('pop-up__active')
+                    .forEach(child => child.classList.remove('pop-up__active'));
+                popParent.classList.add('pop-up__active');
             }
-        })
-    })
+        });
+    });
 }
 
-popAccordion()
+popAccordion();
+
 
 
 
