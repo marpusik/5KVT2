@@ -283,6 +283,9 @@ nav {
   background: #1074EB;
   border-radius: 3px 3px 0px 0px;
 }
+.pop-up__menu{
+  display: contents;
+}
 .disable {
   display: none;
 }
@@ -290,8 +293,10 @@ nav {
   display: flex;
   background: #1074EB;
   color: white;
+  padding: 0 40px;
+  gap: 65px;
   .pop-up__list {
-    padding: 70px 60px;
+    padding: 12px 0 23px 0px;
     ul {
       display: none;
       padding: 15px 0 0 35px;
