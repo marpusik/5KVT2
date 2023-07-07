@@ -152,7 +152,7 @@ function popAccordion() {
     });
 }
 
-popAccordion();
+// popAccordion();
 
 
 
