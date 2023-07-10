@@ -264,8 +264,8 @@ nav {
     left: 415px;
   }
 }
-.pop-up__layout {
-  position: absolute;
+.pop-up__layout, .adress__layout {
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -289,6 +289,7 @@ nav {
 .disable {
   display: none;
 }
+
 .pop-up__inner {
   display: flex;
   background: #1074EB;
@@ -306,5 +307,43 @@ nav {
         display: block;
       }
     }
+  }
+}
+.disabled{
+  display: none;
+}
+.pop-up__inner{
+  overflow-y: scroll;
+  height: 550px;
+}
+.pop-up__inner::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+.pop-up__inner::-webkit-scrollbar-track {
+  background: orange;        /* цвет дорожки */
+}
+.pop-up__inner::-webkit-scrollbar-thumb {
+  background-color: blue;    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 3px solid orange;  /* padding вокруг плашки */
+}
+
+.adress{
+  display: none;
+  &__text{
+    color: #383838;
+
+    /* Text */
+    font-size: 18px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__wrap{
+    width: 1140px;
+    height: 643px;
+    border-radius: 3px;
+    background: #FFF;
   }
 }

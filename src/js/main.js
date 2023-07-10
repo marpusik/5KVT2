@@ -110,8 +110,7 @@ function accordion() {
             const parent = item.parentNode
             if (parent.classList.contains('accordion__item-active')) {
                 parent.classList.remove('accordion__item-active')
-            }
-            else {
+            } else {
                 document
                     .querySelectorAll('.accordion__item')
                     .forEach(child => child.classList.remove('accordion__item-active'))
@@ -126,9 +125,17 @@ accordion()
 let modal = document.querySelector('.pop-up__layout');
 let modalClose = document.querySelector('.modal-close');
 let modalOpen = document.querySelector('.modal');
+let popUp = document.querySelector('.pop-up');
 modalOpen.addEventListener('click', (e) => {
     e.preventDefault();
     modal.classList.toggle('disable');
+});
+modal.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.toggle('disable')
+});
+popUp.addEventListener('click', (e) => {
+    e.stopPropagation();
 });
 modalClose.addEventListener('click', (e) => {
     e.preventDefault();
@@ -154,6 +161,38 @@ function popAccordion() {
 
 popAccordion();
 
+function popMain() {
+    const items = document.querySelectorAll('.pop-up-navigation');
+    const popUpInner = document.querySelector('.pop-up__inner');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            popUpInner.classList.toggle('disabled')
+        })
+    })
+}
+
+popMain();
+
+const but = document.querySelector('.but');
+const adressLayout = document.querySelector('.adress__layout');
+const adressWrap = document.querySelector('.adress__wrap');
+const close = document.querySelector('.close');
+but.addEventListener('click', () => {
+    if (adressLayout.classList.contains('adress')) {
+        adressLayout.classList.remove('adress')
+    } else {
+        adressLayout.classList.add('adress')
+    }
+})
+close.addEventListener('click', () => {
+    adressLayout.classList.add('adress')
+})
+adressLayout.addEventListener('click', () => {
+    adressLayout.classList.add('adress')
+})
+adressWrap.addEventListener('click', (e) => {
+    e.stopPropagation();
+})
 
 
 
