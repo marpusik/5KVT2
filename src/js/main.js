@@ -166,7 +166,7 @@ function popMain() {
     const popUpInner = document.querySelector('.pop-up__inner');
     items.forEach(item => {
         item.addEventListener('click', () => {
-            popUpInner.classList.toggle('disabled')
+            // popUpInner.classList.toggle('disabled')
         })
     })
 }
